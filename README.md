@@ -1,4 +1,4 @@
-# -Javascript-Assessment
+# Javascript-Assessment
 # NFT Minting Application
 
 ## Overview
