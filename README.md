@@ -1,104 +1,78 @@
-# Javascript-Assessment
-# NFT Minting Application
 
-## Overview
+```markdown
+# NFT Collection
 
-This JavaScript application allows users to mint, list, and track the total number of NFTs created. An NFT (Non-Fungible Token) in this context is represented by a simple object containing metadata such as title, description, and an image URL.
+This project demonstrates a simple implementation of an NFT (Non-Fungible Token) collection using JavaScript. It allows you to create NFTs with metadata, list them, and check the total supply of NFTs created.
 
-## Features
+## Project Structure
 
-1. **Mint NFTs**: Create new NFTs with specific metadata and store them in a collection.
-2. **List NFTs**: Display the metadata of all minted NFTs.
-3. **Total Supply**: Get the total number of NFTs created.
+- `NFT` Class: A blueprint for creating NFT objects with metadata such as title, description, and image URL.
+- `myNFTs` Array: A collection that holds all the NFTs created.
+- `createNFT` Function: Creates a new NFT with the provided metadata and stores it in the `myNFTs` array.
+- `listNFTs` Function: Iterates over the array of NFTs and prints their metadata to the console.
+- `getTotalSupply` Function: Returns the total number of NFTs created.
 
-## Code Explanation
+## How to Use
 
-### NFT Class
+1. **Create NFTs:**
 
-The `NFT` class is a blueprint for creating NFT objects. Each NFT object contains the following properties:
-- `title`: The title of the NFT.
-- `description`: A description of the NFT.
-- `imageUrl`: A URL pointing to an image representing the NFT.
+   You can create NFTs by calling the `createNFT` function and passing the title, description, and image URL as arguments.
 
-```javascript
-class NFT {
-  constructor(title, description, imageUrl) {
-    this.title = title;
-    this.description = description;
-    this.imageUrl = imageUrl;
-  }
-}
-```
+   ```javascript
+   createNFT("C", "C Language", "https://example.com/image1.png");
+   createNFT("Python", "Python Language", "https://example.com/image2.png");
+   createNFT("Java", "Java Language", "https://example.com/image3.png");
+   createNFT("JS", "Java Script", "https://example.com/image4.png");
+   ```
 
-### NFT Collection
+2. **List NFTs:**
 
-A variable `myNFTs` is used to store all minted NFTs. It is an array that holds `NFT` objects.
+   To view all the NFTs you have created, call the `listNFTs` function. It will print the title, description, and image URL of each NFT to the console.
 
-```javascript
-const myNFTs = [];
-```
+   ```javascript
+   console.log("Listing NFTs:");
+   listNFTs();
+   ```
 
-### Minting Function
+3. **Get Total Supply:**
 
-The `mintNFT` function creates a new `NFT` object with the provided metadata and adds it to the `myNFTs` array.
+   To find out how many NFTs have been created, call the `getTotalSupply` function. It will return the total count.
 
-```javascript
-function mintNFT(title, description, imageUrl) {
-  const nft = new NFT(title, description, imageUrl);
-  myNFTs.push(nft);
-}
-```
+   ```javascript
+   console.log("Total NFTs created: " + getTotalSupply());
+   ```
 
-### Listing Function
-
-The `listNFTs` function iterates over the `myNFTs` array and prints the metadata of each NFT to the console.
+## Example Output
 
 ```javascript
-function listNFTs() {
-  for (let i = 0; i < myNFTs.length; i++) {
-    const nft = myNFTs[i];
-    console.log("Title: " + nft.title);
-    console.log("Description: " + nft.description);
-    console.log("Image URL: " + nft.imageUrl);
-    console.log("----------------------");
-  }
-}
+Listing NFTs:
+Title: C
+Description: C Language
+Image URL: https://example.com/image1.png
+----------------------
+Title: Python
+Description: Python Language
+Image URL: https://example.com/image2.png
+----------------------
+Title: Java
+Description: Java Language
+Image URL: https://example.com/image3.png
+----------------------
+Title: JS
+Description: Java Script
+Image URL: https://example.com/image4.png
+----------------------
+Total NFTs created: 4
 ```
 
-### Total Supply Function
+## Technologies Used
 
-The `getTotalSupply` function returns the total number of NFTs created by returning the length of the `myNFTs` array.
+- JavaScript
 
-```javascript
-function getTotalSupply() {
-  return myNFTs.length;
-}
+## License
+
+This project is open source and available under the [MIT License](https://opensource.org/licenses/MIT).
+
 ```
 
-### Example Usage
-
-The following code demonstrates how to mint NFTs, list them, and get the total supply of NFTs:
-
-```javascript
-// Minting NFTs
-mintNFT("Artwork", "Abstract painting", "https://example.com/image1.png");
-mintNFT("Photography", "Landscape photo", "https://example.com/image2.png");
-mintNFT("Digital Art", "3D rendered artwork", "https://example.com/image3.png");
-mintNFT("Blender Art", "Blender artwork", "https://example.com/image4.png");
-
-// Listing all NFTs
-console.log("Listing NFTs:");
-listNFTs();
-
-// Displaying the total number of NFTs created
-console.log("Total NFTs created: " + getTotalSupply());
-```
-
-## How to Run
-
-1. Copy the entire code into a JavaScript file (e.g., `nft.js`).
-2. Run the JavaScript file using a Node.js environment or in the browser console.
-
-## Conclusion
-
-This application provides a simple yet functional implementation for creating, listing, and tracking the total number of NFTs. It serves as a basic example and can be expanded with additional features like editing NFT metadata, deleting NFTs, or integrating with a blockchain for actual NFT minting and trading.
+This `README.md` file provides an overview of the project, instructions on how to use the functions, and an example of what the output looks like.
